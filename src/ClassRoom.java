@@ -25,4 +25,13 @@ public class ClassRoom {
     }
 
 
+    public void printStudentNames(){
+        System.out.println();
+        int count = 1;
+        for (Student student : students){
+            System.out.println(count + ". " + student.getName());
+            count++;
+        }
+    }
+
 }

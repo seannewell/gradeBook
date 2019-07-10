@@ -11,20 +11,21 @@ public class UserInterface {
     Scanner sc = new Scanner(System.in);
 
 
+    // Welcome the new user to the database
     public void welcomeScreen(){
-
         System.out.println();
         System.out.println("Welcome to your new Grade Book database system!");
         System.out.println("Let's get started by creating your first classroom.");
-
     }
 
+    // Continue to guide the user
     public void welcomeScreen2(){
         System.out.println();
         System.out.println("Great! Next let's enter the names of the students " +
                 "in this class.");
     }
 
+    // Create a new classroom and add it a list
     public void createNewClassroom(){
         System.out.println();
         System.out.println("What would you like to name this class?");
@@ -36,6 +37,7 @@ public class UserInterface {
         classrooms.add(cr);
     }
 
+    // Create a new student and add it to a list
     public void createNewStudent(){
         System.out.println();
         System.out.println("Which class is this student in?");
@@ -50,16 +52,25 @@ public class UserInterface {
     }
 
 
-
-    public void listClassroomNames(){
+    // Print out the names of each class
+    public void printClassroomNames(){
         System.out.println();
+        int count = 1;
         for (ClassRoom classRoom : classrooms){
-            System.out.println(classRoom.getName());
+            System.out.println(count + ". " + classRoom.getName());
+            count++;
         }
     }
 
     public void mainMenu(){
-
+        System.out.println();
+        System.out.println("What do you wish to do?");
+        System.out.println("1. Add a grade");
+        System.out.println("2. Add a student");
+        System.out.println("3. Add a class");
+        System.out.println("4. List students");
+        System.out.println("5. List classes");
+        System.out.println("6. Get Student Info");
     }
 
 

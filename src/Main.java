@@ -2,7 +2,7 @@
 //
 // Author:      Sean Newell
 //
-// Description: This is a commandline system to input and keep track
+// Description: This is a commandline program to input and keep track
 //              of students' grades
 //
 //
@@ -25,11 +25,10 @@ public class Main {
         ui.createNewClassroom();
         ui.createNewStudent();
         ui.createNewStudent();
-        ui.listClassroomNames();
 
 
-        //ui.listClassroomNames();  // Just used as a test for the list right now.
-
+        ui.printClassroomNames();
+        
 
 
     }
