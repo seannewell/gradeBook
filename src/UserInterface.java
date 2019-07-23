@@ -40,15 +40,24 @@ public class UserInterface {
     // Create a new student and add it to a list
     public void createNewStudent(){
         System.out.println();
-        System.out.println("Which class is this student in?");
+        System.out.println("Which class is this student in? (enter a number)");
+        printClassroomNames(); // Allow the user to see all of the classes
+        System.out.println("Class number: ");
         classNumber = sc.nextInt();
-        System.out.print("Student Name: ");
-        String studentName = sc.next();
-        System.out.println();
-        System.out.print("Student ID: ");
-        String studentId = sc.next();
-        Student st = new Student(studentName,studentId);
-        classrooms.get(classNumber).addStudent(st); // Add student to the appropriate class.
+        String addAnother = "yes";
+        while (addAnother.contains("es")) {
+            System.out.print("Student Name: ");
+            String studentName = sc.next();
+            System.out.println();
+            System.out.print("Student ID: ");
+            String studentId = sc.next();
+            Student st = new Student(studentName, studentId);
+            classrooms.get(classNumber-1).addStudent(st); // Add student to the appropriate class.
+            System.out.println(st.getName() + " was added to " + classrooms.get(classNumber-1).getName() + ".");
+            System.out.println("Do you wish to add another student to this class? (yes/no)");
+            addAnother = sc.next();
+        }
+
     }
 
 
@@ -71,6 +80,7 @@ public class UserInterface {
         System.out.println("4. List students");
         System.out.println("5. List classes");
         System.out.println("6. Get Student Info");
+        System.out.println("7. Quit");
     }
 
 

@@ -16,19 +16,20 @@ public class Main {
         UserInterface ui = new UserInterface();
         //ClassRoom cr = new ClassRoom();
 
+        /////////////INTRO PROGRAM DEMO//////////////////////////////
         ui.welcomeScreen();
         ui.createNewClassroom();
 
         // First classroom created! Yay!
         ui.welcomeScreen2();
 
-        ui.createNewClassroom();
         ui.createNewStudent();
-        ui.createNewStudent();
-
-
-        ui.printClassroomNames();
+        /////////////////////////////////////////////////////////////
         
+
+        ////////////////NORMAL PROGRAM///////////////////////////////
+
+
 
 
     }
