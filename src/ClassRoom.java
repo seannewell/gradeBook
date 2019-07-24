@@ -36,7 +36,7 @@ public class ClassRoom {
 
     public void addGrade(int index, float grade){
         // get a student a the appropriate index and add a grade
-        students.get(index-1).addGrade(grade);
+        students.get(index).addGrade(grade);
     }
 
 }

@@ -77,12 +77,45 @@ public class UserInterface {
         System.out.println("1. Add a grade");
         System.out.println("2. Add a student");
         System.out.println("3. Add a class");
-        System.out.println("4. List students");
-        System.out.println("5. List classes");
+        System.out.println("4. List all students");
+        System.out.println("5. List all classes");
         System.out.println("6. Get Student Info");
         System.out.println("7. Quit");
     }
 
+    public void addGrade(){
+        System.out.println();
+        System.out.println("Which class is the student in? (enter a number)");
+        printClassroomNames();
+        System.out.println("Class number: ");
+        int classNum = sc.nextInt();
+        System.out.println("Which student do you wish to add a grade? (enter a number)");
+        printStudentNames();
+        System.out.println("Student number: ");
+        int studentNum = sc.nextInt();
+        System.out.println("Grade (percentage): ");
+        float grade = sc.nextFloat();
+        classrooms.get(classNum-1).addGrade(studentNum-1,grade);
+    }
 
+    public void printStudentNames(){
+        for (ClassRoom classRoom : classrooms){
+            System.out.println("  -- " + classRoom.getName()+ " --");
+            classRoom.printStudentNames();
+        }
+    }
+
+    public void getStudentInfo(){
+        System.out.println();
+        System.out.println("Which class is the student in? (enter a number)");
+        printClassroomNames();
+        System.out.println("Class number: ");
+        int classNum = sc.nextInt();
+        System.out.println("Which student's information do you wish to have?");
+        printStudentNames();
+        System.out.println("Student number: ");
+        int studentNum = sc.nextInt();
+        classrooms.get(classNum-1).students.get(studentNum-1).getInfo();
+    }
 
 }
